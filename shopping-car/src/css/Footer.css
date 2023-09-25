@@ -1,0 +1,24 @@
+:root {
+  --color-yellow-text: #b1b420; 
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footer div {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer span {
+  color: var(--color-yellow-text);
+}
+
+.footer h5 {
+  color: var(--color-yellow-text);
+}
