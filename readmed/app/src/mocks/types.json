@@ -1,0 +1,24 @@
+{
+  "types": [
+    {
+      "id": 1,
+      "name": "Environment",
+      "description": "This is the environment that will be used to run the application in production or movile"
+    },
+    {
+      "id": 2,
+      "name": "Framework",
+      "description": "This is the framework that will be used to create or run the application web or apiserver"
+    },
+    {
+      "id": 3,
+      "name": "Front end",
+      "description": "This is a very important tools in a interactive environment"
+    },
+    {
+      "id": 4,
+      "name": "Language",
+      "description": "This is the base in everything that will be used"
+    }
+  ]
+}

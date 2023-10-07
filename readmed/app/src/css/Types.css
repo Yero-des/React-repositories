@@ -1,0 +1,91 @@
+.container > div {
+  display: grid;  
+  column-gap: 2rem;
+  row-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.type-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 9px;
+  overflow: hidden;
+  text-decoration: none !important;
+  color: #fff;
+}
+
+.type-progress img {
+  max-width: 100%;
+  height: 9rem;
+  object-fit: cover;
+}
+
+.type-progress p {
+  text-transform: uppercase;
+  font-weight: bolder;
+  z-index: 999;
+}
+
+.type-resource {  
+  cursor: default;
+  position: relative;
+}
+
+.type-resource > div {
+  position: relative;
+}
+
+.type-resource img {
+  position: relative;
+  height: 11rem;
+  object-fit: contain;  
+  z-index: 999;
+}
+
+.type-resource > div > div {
+  position: absolute;
+  z-index: 998;
+  height: 100%;
+  background: rgb(10, 28, 127);
+}
+
+.type-filter > select {
+  width: 20%;
+}
+
+.add-progress {
+  cursor: pointer;
+  position: absolute !important;
+  width: 20%;
+  height: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.less-progress {
+  cursor: pointer;
+  position: absolute !important;
+  width: 20%;
+  height: 100%;
+  right: 0;  
+  z-index: 1000;
+}
+
+.add-progress:hover {  
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(210,13,13,1) 0%, rgba(204,25,122,0) 8%);
+}
+
+.less-progress:hover {
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 87%, rgb(26, 210, 13) 100%);
+}
+
+@media (width >= 50em) {
+  .container > div {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
