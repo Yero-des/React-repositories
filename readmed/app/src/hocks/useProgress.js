@@ -7,9 +7,9 @@ export const useProgress = () => {
   const { resources, setResources } = useContext(ResourceContext);
 
   // Repara esto plis
-  const updateProgressInApi = async (resourceId, newProgress) => {
+  const updateProgressInApi = async (id, progress) => {
 
-    const url = `${API}/resources/${resourceId}/`; 
+    const url = `${API}/resources/${id}/update-progress/`; 
   
     try {
       await fetch(url, {
@@ -17,12 +17,13 @@ export const useProgress = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ progress: newProgress }), 
+        body: JSON.stringify({ progress: progress }), 
       });  
-      console.log('Actualización en la API exitosa');
+      console.log(`Update successful for ${id} in progress ${progress}`);
     } catch (error) {      
-      console.error('Error al actualizar en la API:', error);
+      console.error('Error API:', error);
     }
+
   };
 
   const addProgress = resource => {
@@ -30,20 +31,21 @@ export const useProgress = () => {
     const resourceIndex = resources.findIndex(item => item.id === resource.id);
 
     if (resourceIndex >= 0) {
-
-      updateProgressInApi(resource.id, resource.progress)
-
+    
       const newResources = structuredClone(resources)
-      newResources[resourceIndex].progress += 1
+      const resourceUpdateProgress = newResources[resourceIndex].progress += 1
 
-      if (newResources[resourceIndex].progress > resource.progress_max) {
+      
+      if (resourceUpdateProgress > resource.progress_max) {
         return alert("Mucha calidad")
       } 
-
-      if (newResources[resourceIndex].progress < 0) {
+      
+      if (resourceUpdateProgress < 0) {
         return alert("Que estas haciendo ??")
       } 
       
+      // Update API
+      updateProgressInApi(resource.id, resourceUpdateProgress)
       setResources(newResources);
     }
 
@@ -56,16 +58,19 @@ export const useProgress = () => {
     if (resourceIndex >= 0) {
 
       const newResources = structuredClone(resources)
-      newResources[resourceIndex].progress -= 1
+      const resourceUpdateProgress = newResources[resourceIndex].progress -= 1
 
-      if (newResources[resourceIndex].progress > resource.progress_max) {
+      
+      if (resourceUpdateProgress > resource.progress_max) {
         return alert("Mucha calidad")
       } 
-
-      if (newResources[resourceIndex].progress < 0) {
+      
+      if (resourceUpdateProgress < 0) {
         return alert("Que estas haciendo ??")
       } 
       
+      // Update API
+      updateProgressInApi(resource.id, resourceUpdateProgress)
       setResources(newResources);
     }
 

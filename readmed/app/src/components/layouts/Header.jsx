@@ -20,7 +20,7 @@ export const Header = () => {
       </motion.div>
       <motion.div className="row justify-content-center align-items-center" initial="initial" animate="animate" variants={showOn}>
         <div className="col-auto">
-          <h4 className="text-secondary fs-6">Welcome to my new proyect, my name is yeromi your favorite developer</h4>
+          <h4 className="text-secondary fs-6">Welcome to my new proyect, my name is yeromi ;)</h4>
         </div>        
       </motion.div>
     </header>
