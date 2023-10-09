@@ -10,7 +10,6 @@ const Type = ({name, description, image }) => {
     <motion.a href={`/progressmed/${name}`} className='type-progress border border-gray border-1' title={description} whileHover="hover" variants={showResource}>
       <img src={image} alt={name} className='border-bottom border-light border-5'/>
       <p>{ name }</p>
-      <div className='your-name shingeki'></div>
     </motion.a>
   )
 }

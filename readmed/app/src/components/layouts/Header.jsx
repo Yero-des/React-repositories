@@ -10,18 +10,13 @@ export const Header = () => {
 
   return (
     <header className="container-fluid">
-      <motion.div className="d-flex flex-column p-5 justify-content-center align-items-center" initial="initial" animate="animate" variants={showOn}>
+      <motion.div className="d-flex p-5 g-4 align-items-center" initial="initial" animate="animate" variants={showOn}>
         <motion.div animate={{rotate: 30, transition: {duration: 2}}}>
           <img src={ReactLogo} alt="Logo"></img>
         </motion.div>
-        <a href='/progressmed' className='mt-3'>
-          <h1 className="text-danger m-0">Progressmed</h1>
+        <a href='/progressmed' className='p-3 pt-0 pb-0'>
+          <h1 className="fs-3 text-danger m-0">Progressmed</h1>
         </a>
-      </motion.div>
-      <motion.div className="row justify-content-center align-items-center" initial="initial" animate="animate" variants={showOn}>
-        <div className="col-auto">
-          <h4 className="text-secondary fs-6">Welcome to my new proyect, my name is yeromi ;)</h4>
-        </div>        
       </motion.div>
     </header>
   );

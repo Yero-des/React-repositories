@@ -4,6 +4,7 @@ import { variantResource } from "../styles/variantResource"
 import { motion } from "framer-motion"
 import { useEffect } from "react"
 import { useProgress } from "../hocks/useProgress"
+import { Search } from 'react-bootstrap-icons';
 
 const Resource = ({name, description, image, progress, progress_max, onClickAddProgress, onClickLessProgress }) => {
 
@@ -44,8 +45,9 @@ export const TypeDetails = ({ resources, types}) => {
     <div className="container">   
 
       {/* Filter fast */}
-      <motion.div className='type-filter d-flex justify-content-end m-4'>
-        <select className="form-control" onChange={changeType} value={details.type}>
+      <motion.div className='type-filter d-flex justify-content-end align-items-center m-4'>
+        <Search color="white" size={15} />
+        <select className="form-control form-control-sm" onChange={changeType} value={details.type}>
           {types.map(type => 
             <option key={type.id} value={type.name}>{type.name}</option>
           )}
